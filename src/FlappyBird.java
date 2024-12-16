@@ -53,7 +53,6 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener{
 
     //Game logic
     Bird bird;
-
     int velocityX = -4;
     int velocityY = 0;
     int gravity = 1;
@@ -69,7 +68,6 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener{
 
     FlappyBird(){
         setPreferredSize(new Dimension(boardWidth, boardHeight));
-        // setBackground(Color.blue);
         setFocusable(true);
         addKeyListener(this);
 
@@ -82,6 +80,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener{
         bird = new Bird(birdImg);
         pipes = new ArrayList<Pipe>();
 
+        //Add a pipes to the ArrayList every 1.5 seconds
         placePipesTimer = new Timer(1500, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
